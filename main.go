@@ -35,13 +35,13 @@ import (
 	"unicode"
 	"unicode/utf8"
 
+	"github.com/z9001/garble/internal/linker"
+	"github.com/z9001/garble/internal/literals"
 	"golang.org/x/exp/maps"
 	"golang.org/x/exp/slices"
 	"golang.org/x/mod/module"
 	"golang.org/x/mod/semver"
 	"golang.org/x/tools/go/ast/astutil"
-	"mvdan.cc/garble/internal/linker"
-	"mvdan.cc/garble/internal/literals"
 )
 
 var flagSet = flag.NewFlagSet("garble", flag.ContinueOnError)

@@ -15,7 +15,7 @@ import (
 	"strconv"
 	"strings"
 
-	"mvdan.cc/garble/internal/literals"
+	"github.com/z9001/garble/internal/literals"
 )
 
 const (
