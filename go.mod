@@ -1,4 +1,4 @@
-module mvdan.cc/garble
+module github.com/z9001/garble
 
 go 1.20
 

@@ -210,6 +210,7 @@ func debugSince(start time.Time) time.Duration {
 }
 
 func main1() int {
+	fmt.Println("DONTGARBLE version")
 	defer func() {
 		if os.Getenv("GARBLE_WRITE_ALLOCS") != "true" {
 			return
