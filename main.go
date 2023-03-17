@@ -2401,5 +2401,9 @@ To install Go, see: https://go.dev/doc/install
 	if cache.GOGARBLE == "" {
 		cache.GOGARBLE = "*" // we default to obfuscating everything
 	}
+	cache.DONTGARBLE = os.Getenv("DONTGARBLE")
+	if cache.DONTGARBLE == "" {
+		cache.DONTGARBLE = "?" // default to match nothing
+	}
 	return nil
 }

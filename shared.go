@@ -44,7 +44,8 @@ type sharedCache struct {
 	// or committed is to use its content ID from the build cache.
 	BinaryContentID []byte
 
-	GOGARBLE string
+	GOGARBLE   string
+	DONTGARBLE string
 
 	// Filled directly from "go env".
 	// Keep in sync with fetchGoEnv.
@@ -339,7 +340,7 @@ func appendListedPackages(packages []string, mainBuild bool) error {
 		case pkg.Name == "main" && strings.HasSuffix(path, ".test"),
 			path == "command-line-arguments",
 			strings.HasPrefix(path, "plugin/unnamed"),
-			module.MatchPrefixPatterns(cache.GOGARBLE, path):
+			module.MatchPrefixPatterns(cache.GOGARBLE, path) && !module.MatchPrefixPatterns(cache.DONTGARBLE, path):
 
 			pkg.ToObfuscate = true
 			anyToObfuscate = true
